@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Avanya ❤️</title>
+<style>
+  *{box-sizing:border-box}
+  body{
+    margin:0; font-family:Georgia, "Times New Roman", serif;
+    min-height:100vh; color:#4b1630;
+    background:radial-gradient(circle at top,#ffd9e7 0,#fff1f6 42%,#ffe2ed 100%);
+    overflow-x:hidden;
+  }
+  .hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+  .heart{position:absolute;bottom:-40px;font-size:24px;animation:float 8s linear infinite;opacity:.6}
+  @keyframes float{0%{transform:translateY(0) rotate(0);opacity:0}15%{opacity:.7}100%{transform:translateY(-110vh) rotate(25deg);opacity:0}}
+  .wrap{position:relative;z-index:1;max-width:850px;margin:auto;padding:34px 18px 70px}
+  .card{
+    background:rgba(255,255,255,.78); backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,.9); border-radius:30px;
+    padding:34px 22px; box-shadow:0 18px 60px rgba(122,25,66,.16);
+    text-align:center;
+  }
+  .tiny{letter-spacing:3px;text-transform:uppercase;font-size:12px;color:#b44970}
+  h1{font-size:clamp(42px,10vw,76px);margin:10px 0 2px;color:#9e174e}
+  h2{font-size:30px;margin:10px 0 20px}
+  p{font-family:Arial,sans-serif;line-height:1.75;font-size:17px}
+  .note{
+    max-width:680px;margin:25px auto;padding:24px;
+    background:#fff8fb;border-radius:22px;text-align:left;
+    border-left:5px solid #d92d69;
+  }
+  .buttons{display:flex;justify-content:center;gap:15px;align-items:center;min-height:100px;position:relative}
+  button{
+    border:0;border-radius:999px;padding:15px 26px;font-size:16px;font-weight:700;
+    cursor:pointer;box-shadow:0 8px 22px rgba(122,25,66,.18);
+  }
+  #yes{background:#c91f5b;color:white}
+  #no{background:#eee;color:#555;position:relative}
+  .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:25px}
+  .gallery img{width:100%;height:300px;object-fit:cover;border-radius:20px;box-shadow:0 8px 25px rgba(0,0,0,.12)}
+  .gallery img:last-child{grid-column:1/-1;height:390px}
+  .hidden{display:none}
+  .success{animation:pop .5s ease}
+  @keyframes pop{0%{transform:scale(.8);opacity:0}100%{transform:scale(1);opacity:1}}
+  .signature{font-style:italic;color:#9e174e;font-size:22px;margin-top:20px}
+  @media(max-width:600px){.gallery{grid-template-columns:1fr}.gallery img,.gallery img:last-child{height:330px}.note{padding:18px}}
+</style>
+</head>
+<body>
+<div class="hearts" id="hearts"></div>
+<main class="wrap">
+  <section class="card" id="main">
+    <div class="tiny">A little something for you</div>
+    <h1>I'm Sorry, Avanya ❤️</h1>
+    <h2>Please forgive me, meri jaan 🥺</h2>
+    <div class="note">
+      <p><b>Avanya,</b></p>
+      <p>I know I messed up, and I genuinely feel sorry for hurting you. I never want my words or actions to make you feel unloved, ignored, or unimportant. You mean so much to me, and the last thing I ever want is to see you upset because of me.</p>
+      <p>I can't change what happened, but I can promise to learn from it and try my best to do better. I'm not asking you to forget everything instantly — I just want one chance to make things right and put that smile back on your face. ❤️</p>
+      <p>So, my beautiful Avanya… will you forgive your idiot? 🥺👉👈</p>
+    </div>
+    <div class="buttons">
+      <button id="yes">Yes, I forgive you ❤️</button>
+      <button id="no">No 😤</button>
+    </div>
+    <p style="font-size:13px;color:#9a7180">P.S. The “No” button is a little shy today. 😭</p>
+  </section>
+
+  <section class="card hidden success" id="success">
+    <div class="tiny">Best decision ever</div>
+    <h1>YAYYY! ❤️</h1>
+    <h2>Thank you, Avanya 🥹</h2>
+    <div class="note">
+      <p><b>My dearest Avanya,</b></p>
+      <p>Thank you for forgiving me. 🥺❤️ You have no idea how happy this makes me. I promise I'll cherish you, respect you, listen to you, and keep trying to be the person who makes you feel loved and safe.</p>
+      <p>These pictures remind me of all the little moments that make our story special. I don't want perfection — I want <b>us</b>, with all the laughs, silly fights, apologies, hugs, and beautiful memories still waiting for us.</p>
+      <p>Now come here, madam… no more being angry at your idiot. 😭😂❤️</p>
+      <div class="signature">Forever yours,<br>❤️ Your idiot</div>
+    </div>
+    <h2>Our little memories 📸</h2>
+    <div class="gallery">
+      <img src="memory_1.jpg" alt="Our memory 1">
+      <img src="memory_2.jpg" alt="Our memory 2">
+      <img src="memory_3.jpg" alt="Our memory 3">
+      <img src="memory_4.jpg" alt="Our memory 4">
+      <img src="memory_5.jpg" alt="Our memory 5">
+    </div>
+  </section>
+</main>
+<script>
+const no=document.getElementById('no');
+const yes=document.getElementById('yes');
+const main=document.getElementById('main');
+const success=document.getElementById('success');
+
+function moveNo(){
+  const parent=no.parentElement;
+  const maxX=Math.max(0,parent.clientWidth-no.offsetWidth);
+  const x=Math.random()*maxX-maxX/2;
+  const y=(Math.random()*90)-45;
+  no.style.transform=`translate(${x}px,${y}px)`;
+}
+no.addEventListener('mouseenter',moveNo);
+no.addEventListener('touchstart',(e)=>{e.preventDefault();moveNo();});
+no.addEventListener('click',(e)=>{e.preventDefault();moveNo();});
+
+yes.addEventListener('click',()=>{
+  main.classList.add('hidden');
+  success.classList.remove('hidden');
+  for(let i=0;i<28;i++) setTimeout(makeHeart,i*70);
+  window.scrollTo({top:0,behavior:'smooth'});
+});
+
+function makeHeart(){
+  const h=document.createElement('div');
+  h.className='heart';
+  h.textContent=['❤️','💗','💕','💖','💘'][Math.floor(Math.random()*5)];
+  h.style.left=Math.random()*100+'vw';
+  h.style.animationDuration=(5+Math.random()*5)+'s';
+  h.style.fontSize=(16+Math.random()*22)+'px';
+  document.getElementById('hearts').appendChild(h);
+  setTimeout(()=>h.remove(),10000);
+}
+setInterval(makeHeart,900);
+</script>
+</body>
+</html>
